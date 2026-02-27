@@ -1,0 +1,28 @@
+/* Escala Tipográfica Reutilizável */
+.f-70 {
+  font-size: 4.375rem;
+  line-height: 0.92;
+  font-weight: 700;
+}
+.f-50 {
+  font-size: 3.125rem;
+  line-height: 1.3;
+  font-weight: 500;
+}
+.f-30 {
+  font-size: 1.875rem;
+  line-height: 1.3;
+  font-weight: 500;
+}
+.f-18 {
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+.f-16 {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.f-14 {
+  font-size: 0.875rem;
+  line-height: 1.3;
+}

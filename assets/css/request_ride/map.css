@@ -1,0 +1,24 @@
+html,
+body {
+  height: 100%;
+}
+
+#requestRide {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-passenger {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: calc((100vw - 1200px) / 2) 350px 1fr;
+}
+
+.main-passenger__sidebar {
+  grid-column: 2;
+}
+
+#map {
+  grid-column: 3;
+  margin-inline-start: 20px;
+}

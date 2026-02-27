@@ -1,0 +1,29 @@
+/* Frequently Asked Questions */
+.questions {
+  margin-block-start: 140px;
+}
+
+.questions__items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.questions__title {
+  color: var(--g12);
+  grid-column: 1/-1;
+  line-height: 1.3;
+  margin-block-end: 60px;
+  text-align: center;
+}
+
+.questions__item {
+  border: 2px solid var(--g4);
+  border-radius: 4px;
+  color: var(--g11);
+  display: flex;
+  padding-block: 1.3em;
+  padding-inline: 1em;
+  justify-content: space-between;
+  cursor: pointer;
+}

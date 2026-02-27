@@ -1,0 +1,39 @@
+#signup {
+  background: linear-gradient(90deg, #2f3336 50%, #ffffff 50%);
+}
+
+#signup main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-block-start: 50px;
+}
+
+.header {
+  grid-column: 1;
+  padding-block: 1em;
+  padding-inline: 1em;
+}
+
+.main__wrapper-form {
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.signup-form__title {
+  margin-block-end: 0.6em;
+  grid-column: 2;
+}
+
+.signup-form {
+  display: grid;
+  grid-column: 2;
+}
+
+.signup-form__auths {
+  display: flex;
+  gap: 20px;
+}
+
+.signup-form__auth-link {
+  color: var(--b10);
+}

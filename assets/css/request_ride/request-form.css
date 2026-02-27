@@ -1,0 +1,81 @@
+.form-request {
+  display: grid;
+  gap: 0.75em;
+}
+
+.form-request__route {
+  display: grid;
+  position: relative;
+}
+
+.form-request__input--top {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+  border-bottom: 1px solid var(--g1);
+}
+
+.form-request__input--bottom {
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+}
+
+.form-request__swap {
+  background: var(--g1);
+  border: transparent;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-request__swap-icon {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-out;
+}
+
+.form-request__swap--inverted .form-request__swap-icon {
+  transform: rotate(-180deg);
+}
+
+.form-request__cars {
+  display: grid;
+  gap: 0.75em;
+}
+
+.form-request__car {
+  border: var(--g12) solid 1px;
+  border-radius: 4px;
+  color: var(--g12);
+  font-size: 1.125rem;
+  padding: 0.8em;
+  cursor: pointer;
+}
+
+.form-request__car.selected,
+.form-request__car:has(input[type='radio']:focus) {
+  border: var(--b9) solid 1px;
+  color: var(--b12);
+  background: var(--b1);
+}
+
+.form-request__car-infos {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  pointer-events: none;
+}
+
+.form-request__car-type {
+  display: flex;
+  align-items: center;
+  gap: 0.777em;
+}
+
+#error-message {
+  color: red;
+  display: none;
+}

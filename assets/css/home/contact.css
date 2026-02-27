@@ -1,0 +1,20 @@
+/* Contact */
+.contact {
+  display: grid;
+  gap: 160px;
+  grid-template-columns: 1fr 1fr;
+  margin-block-start: 200px;
+}
+
+.contact__image-wrapper {
+  background: var(--g12);
+  display: grid;
+  align-items: center;
+  border-radius: 50px;
+  max-height: 600px;
+}
+
+.contact__title {
+  color: var(--g12);
+  margin-block-end: 0.7em;
+}

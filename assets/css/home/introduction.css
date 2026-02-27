@@ -1,0 +1,22 @@
+/* Introduction */
+
+.main-home {
+  margin-block-start: 140px;
+}
+
+.introduction {
+  display: grid;
+  gap: 20px;
+  text-align: center;
+  justify-items: center;
+}
+
+.introduction__title {
+  color: var(--g12);
+}
+
+.introduction__description {
+  color: var(--g10);
+  max-width: 58ch;
+}
+

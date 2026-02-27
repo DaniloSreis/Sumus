@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socilitar Corrida</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/request_ride/request-form.css" />
+    <link rel="stylesheet" href="../assets/css/request_ride/map.css" />
+  </head>
+
+  <body id="requestRide">
+    <header class="header">
+      <nav class="container header__nav">
+        <img src="../public/images/logo-preta-50.svg" class="nav__logo" width="40" height="52" alt="" />
+
+        <ul class="nav-menu">
+          <li class="nav-menu__item">
+            <a href="./request_ride.html" class="nav-menu__link">Solicitar</a>
+          </li>
+
+          <li class="nav-menu__item">
+            <a href="./wallet.html" class="nav-menu__link">Carteira</a>
+          </li>
+
+          <li class="nav-menu__item">
+            <a href="./ride_history.html" class="nav-menu__link">Histórico</a>
+          </li>
+
+          <li class="nav-menu__item">
+            <a href="./account.html" class="nav-menu__link">Conta</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-passenger">
+      <div class="main-passenger__sidebar">
+        <form class="form-request">
+          <div class="form-request__route">
+            <input
+              type="text"
+              class="form-request__input--top form__input form__input--black"
+              id="location"
+              required
+              placeholder="Embarque"
+            />
+            <button type="button" class="form-request__swap" aria-label="Inverter localização e destino">
+              <img src="../public/icons/inverter.svg" class="form-request__swap-icon" width="32" height="32" alt="" />
+            </button>
+
+            <input
+              type="text"
+              class="form-request__input--bottom form__input form__input--black"
+              id="destination"
+              required
+              placeholder="Destino"
+            />
+          </div>
+          <div class="dropdown" id="dropdownRoutes">
+            <button
+              type="button"
+              class="dropdown__button button button--black"
+              tabindex="0"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="dropdown-list"
+            >
+              <span class="dropdown__button-text">Rotas Salvas</span>
+              <img
+                src="../public/icons/arrow-down-white.svg"
+                width="24"
+                height="24"
+                alt=""
+                class="dropdown__icon"
+                aria-hidden="true"
+              />
+            </button>
+            <div class="dropdown__list" aria-label="Rotas salvas" role="listbox">
+              <div class="dropdown__option" role="option" tabindex="-1">Nehuma</div>
+              <div class="dropdown__option" role="option" aria-selected="false" tabindex="-1">Casa</div>
+              <div class="dropdown__option" aria-selected="false" role="option" tabindex="-1">Mercado</div>
+              <div class="dropdown__option" aria-selected="false" role="option" tabindex="-1">Cabeleireiro</div>
+              <div class="dropdown__option" aria-selected="false" role="option" tabindex="-1">Trabalho 1</div>
+              <div class="dropdown__option" aria-selected="false" role="option" tabindex="-1">Trabalho 2</div>
+              <div class="dropdown__option" aria-selected="false" role="option" tabindex="-1">Faculdade</div>
+            </div>
+          </div>
+
+          <div class="form-request__cars">
+            <div class="form-request__car">
+              <input type="radio" name="car-type" class="sr-only" id="type-normal" required />
+              <label for="type-normal" class="form-request__car-infos">
+                <span class="form-request__car-type">
+                  <img src="../public/icons/normal-car.svg" width="24" height="24" alt="" />
+                  Carro normal
+                </span>
+                <span class="form-request__car-price">R$ 35,25</span>
+              </label>
+            </div>
+
+            <div class="form-request__car">
+              <input type="radio" name="car-type" class="sr-only" id="type-accessible" required />
+              <label for="type-accessible" class="form-request__car-infos">
+                <span class="form-request__car-type">
+                  <img src="../public/icons/accessible-car.svg" width="24" height="24" alt="" />
+                  Carro adaptado
+                </span>
+                <span class="form-request__car-price"> R$ 35,25 </span>
+              </label>
+            </div>
+          </div>
+          <p id="error-message"></p>
+          <button class="button button--blue" id="request-btn">Solicitar</button>
+        </form>
+      </div>
+      <div id="map"></div>
+    </main>
+    <script src="../assets/js/passenger/passenger.js" type="module"></script>
+    <script src="../assets/js/passenger/request-form.js"></script>
+  </body>
+</html>
