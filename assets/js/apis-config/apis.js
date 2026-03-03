@@ -1,18 +1,3 @@
-// Dotenv initialization
-import dotenv from "dotenv";
-dotenv.config()
-
-// TODO: Add default values if dotenv variables is null
-// Example: foo: process.env.FOO || null
-
-// Namespace
-const config = {
-  nominatim_api: process.env.NOMINATIM_API,
-  ors_api: process.env.ORS_API,
-  ors_key: process.env.ORS_KEY,
-  country: process.env.COUNTRY,
-};
-
 export async function fetchNominatim(endpoint, params) {
   const url = new URL(`${config.nominatim_api}${endpoint}`);
   url.search = new URLSearchParams({

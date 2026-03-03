@@ -19,15 +19,15 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/request_ride/request-form.css" />
-    <link rel="stylesheet" href="../assets/css/request_ride/map.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/request_ride/request-form.css" />
+    <link rel="stylesheet" href="/css/request_ride/map.css" />
   </head>
 
   <body id="requestRide">
     <header class="header">
       <nav class="container header__nav">
-        <img src="../public/images/logo-preta-50.svg" class="nav__logo" width="40" height="52" alt="" />
+        <img src="/images/logo-preta-50.svg" class="nav__logo" width="40" height="52" alt="" />
 
         <ul class="nav-menu">
           <li class="nav-menu__item">
@@ -61,7 +61,7 @@
               placeholder="Embarque"
             />
             <button type="button" class="form-request__swap" aria-label="Inverter localização e destino">
-              <img src="../public/icons/inverter.svg" class="form-request__swap-icon" width="32" height="32" alt="" />
+              <img src="/icons/inverter.svg" class="form-request__swap-icon" width="32" height="32" alt="" />
             </button>
 
             <input
@@ -83,7 +83,7 @@
             >
               <span class="dropdown__button-text">Rotas Salvas</span>
               <img
-                src="../public/icons/arrow-down-white.svg"
+                src="/icons/arrow-down-white.svg"
                 width="24"
                 height="24"
                 alt=""
@@ -107,7 +107,7 @@
               <input type="radio" name="car-type" class="sr-only" id="type-normal" required />
               <label for="type-normal" class="form-request__car-infos">
                 <span class="form-request__car-type">
-                  <img src="../public/icons/normal-car.svg" width="24" height="24" alt="" />
+                  <img src="/icons/normal-car.svg" width="24" height="24" alt="" />
                   Carro normal
                 </span>
                 <span class="form-request__car-price">R$ 35,25</span>
@@ -118,7 +118,7 @@
               <input type="radio" name="car-type" class="sr-only" id="type-accessible" required />
               <label for="type-accessible" class="form-request__car-infos">
                 <span class="form-request__car-type">
-                  <img src="../public/icons/accessible-car.svg" width="24" height="24" alt="" />
+                  <img src="/icons/accessible-car.svg" width="24" height="24" alt="" />
                   Carro adaptado
                 </span>
                 <span class="form-request__car-price"> R$ 35,25 </span>
@@ -131,7 +131,7 @@
       </div>
       <div id="map"></div>
     </main>
-    <script src="../assets/js/passenger/passenger.js" type="module"></script>
-    <script src="../assets/js/passenger/request-form.js"></script>
+    <script src="/js/passenger/passenger.js" type="module"></script>
+    <script src="/js/passenger/request-form.js"></script>
   </body>
 </html>
