@@ -1,0 +1,67 @@
+.sidebar {
+  align-content: start;
+  background: var(--g12);
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 20px;
+  height: 100dvh;
+  max-width: 300px;
+  padding: 1.25em;
+}
+
+.sidebar__user-picture {
+  border-radius: 50%;
+  background: var(--g1);
+  height: 50px;
+  width: 50px;
+}
+
+.sidebar__list {
+  display: grid;
+  gap: 16px;
+}
+
+.sidebar__item {
+  border-radius: 4px;
+}
+
+.sidebar__item:hover:not(.active) {
+  background: var(--g10);
+}
+
+.sidebar__item.active {
+  justify-self: stretch;
+  background: var(--g11);
+}
+
+.sidebar__link {
+  align-items: center;
+  color: var(--g1);
+  display: flex;
+  gap: 14px;
+  padding: 1em 1.25em;
+}
+
+.sidebar__delete-account {
+  align-self: end;
+  background: #cf3a3a;
+  border: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--g1);
+  font-weight: 600;
+  padding-block: 1em;
+  text-transform: uppercase;
+}
+
+.sidebar__logout-account {
+  align-items: center;
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  color: var(--g1);
+  display: flex;
+  font-weight: 600;
+  padding-block: 1em;
+  justify-self: start;
+}
