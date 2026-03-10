@@ -1,3 +1,9 @@
+#account {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 100px;
+}
+
 .sidebar {
   align-content: start;
   background: var(--g12);
