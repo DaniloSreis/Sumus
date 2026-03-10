@@ -134,6 +134,8 @@ export async function initMap() {
       lon: -46.617006,
     });
 
+    console.log(data)
+
     const { road, house_number, suburb } = data.address;
     userAddress = `${road}, ${house_number} - ${suburb}`;
     inputLocation.value = userAddress;
