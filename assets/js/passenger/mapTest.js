@@ -9,6 +9,8 @@ function debounce(fun, delay) {
 }
 
 export async function initMap() {
+
+
   // Namespace
     let mainMap = null
     let markerStart = null

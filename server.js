@@ -26,6 +26,10 @@ app.get("/request", (req, res) => {
   res.sendFile(path.join(__dirname, "pages", "request-ride.html"));
 })
 
+app.get("/env", (req, res) => {
+  res.status(200).json(JSON.stringify(config))
+})
+
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
   console.log(`🌍 Configurado para o país: ${config.country}`);
