@@ -6,6 +6,7 @@
     <title>Conta</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/user-account/sidebar.css" />
+    <link rel="stylesheet" href="../assets/css/user-account/tab.css" />
   </head>
   <body id="account">
     <aside class="sidebar">
@@ -39,6 +40,79 @@
       </button>
     </aside>
     <main class="main-account">
+      <section class="settings">
+        <h1 class="settings__title f-30">Conta</h1>
+        <ul class="settings__tablist container" role="tablist">
+          <li class="settings__tab f-18" role="tab" aria-selected="true" tabindex="0">Informações</li>
+          <li class="settings__tab disabled f-18" role="tab" aria-selected="false" tabindex="0">Documentos</li>
+          <li class="settings__tab f-18" role="tab" aria-selected="false" tabindex="0">Contatos de Emergência</li>
+        </ul>
+        <div class="settings__panels">
+          <div class="settings__panel" role="tabpanel" aria-hidden="true">
+            <form class="form settings__form settings__informations">
+              <div class="form__group">
+                <input type="text" class="form__input" id="name" />
+                <label for="name" class="form__label">Nome</label>
+              </div>
+              <div class="form__group">
+                <input type="tel" class="form__input" id="phone" />
+                <label for="phone" class="form__label">Celular</label>
+              </div>
+              <div class="form__group">
+                <input type="email" class="form__input" id="email" />
+                <label for="email" class="form__label">Email</label>
+              </div>
+              <div class="form__group">
+                <div class="dropdown" id="dropdownAccount">
+                  <button
+                    type="button"
+                    class="dropdown__button button button--black"
+                    tabindex="0"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-controls="dropdown-list"
+                  >
+                    <span class="dropdown__button-text">Nenhum</span>
+                    <img
+                      src="../public/icons/arrow-down-black.svg"
+                      width="24"
+                      height="24"
+                      alt=""
+                      class="dropdown__icon"
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <div class="dropdown__list" aria-label="Rotas salvas" role="listbox">
+                    <div class="dropdown__option" role="option" aria-selected="true" tabindex="0">Nenhum</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">Idoso</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">Nanismo</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">Cadeirante</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">
+                      Deficiente Visual
+                    </div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">
+                      Deficiência Auditiva
+                    </div>
+                  </div>
+                </div>
+                <span class="form__label">Grupo Prioritário</span>
+              </div>
+              <div class="form__group">
+                <input type="password" class="form__input" id="newPassword" />
+                <label for="newPassword">Nova Senha</label>
+              </div>
+              <div class="form__group">
+                <input type="password" class="form__input" id="repeatPassword" />
+                <label for="repeatPassword">Repita a Senha</label>
+              </div>
+              <button type="button" class="form__button">Salvar</button>
+            </form>
+          </div>
+          <div class="settings__panel" role="tabpanel" aria-hidden="false"></div>
+          <div class="settings__panel active" role="tabpanel" aria-hidden="false"></div>
+        </div>
+      </section>
     </main>
+    <script type="module" src="../assets/js/account/account.js"></script>
   </body>
 </html>
