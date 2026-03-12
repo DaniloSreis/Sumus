@@ -43,12 +43,12 @@
       <section class="settings">
         <h1 class="settings__title f-30">Conta</h1>
         <ul class="settings__tablist container" role="tablist">
-          <li class="settings__tab f-18" role="tab" aria-selected="true" tabindex="0">Informações</li>
-          <li class="settings__tab disabled f-18" role="tab" aria-selected="false" tabindex="0">Documentos</li>
+          <li class="settings__tab f-18" role="tab" aria-selected="false" tabindex="0">Informações</li>
+          <li class="settings__tab disabled f-18" role="tab" aria-selected="true" tabindex="0">Documentos</li>
           <li class="settings__tab f-18" role="tab" aria-selected="false" tabindex="0">Contatos de Emergência</li>
         </ul>
         <div class="settings__panels">
-          <div class="settings__panel" role="tabpanel" aria-hidden="true">
+          <div class="settings__panel" role="tabpanel" aria-hidden="false">
             <form class="form settings__form settings__informations">
               <div class="form__group">
                 <input type="text" class="form__input" id="name" />
@@ -108,7 +108,27 @@
               <button type="button" class="form__button">Salvar</button>
             </form>
           </div>
-          <div class="settings__panel" role="tabpanel" aria-hidden="false"></div>
+          <div class="settings__panel" role="tabpanel" aria-hidden="true">
+            <div class="upload-card">
+              <div class="upload-card__dropzone">
+                <img src="../public/icons/file.svg" width="24" height="24" alt="" class="upload-card__icon" />
+                <p class="upload-card__label f-14">
+                  Arraste e solte os arquivos ou clique para selecionar. Formatos Aceitos: .pdf, .jpg, .png
+                </p>
+              </div>
+              <p class="upload-card__info f-16">
+                Envie uma foto do seu RG ou Laudo Médico garantindo que estejam legíveis e atualizados.
+              </p>
+              <div class="upload-card__status">
+                <div class="upload-card__details">
+                  <img src="../public/icons/file-check.svg" width="24" height="24" alt="" class="upload-card__icon" />
+                  <span class="upload-card__filename"></span>
+                </div>
+                <div class="upload-card__progress"></div>
+              </div>
+              <button class="upload-card__button button">Enviar</button>
+            </div>
+          </div>
           <div class="settings__panel active" role="tabpanel" aria-hidden="false"></div>
         </div>
       </section>

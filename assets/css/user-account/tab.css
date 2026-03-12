@@ -27,6 +27,7 @@
 
 .settings__tab[aria-selected='true'] {
   background: var(--b7);
+  color: var(--g12)
 }
 
 .settings__panel[aria-hidden='false'] {
@@ -79,4 +80,56 @@
 
 .form__group:nth-child(3) {
   align-self: start;
+}
+
+.upload-card {
+  display: grid;
+  gap: 16px;
+}
+
+.upload-card__dropzone {
+  align-items: center;
+  border-radius: 4px;
+  border: dashed;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em;
+}
+
+.upload-card__label {
+  max-width: 45ch;
+  margin-block-start: 0.875em;
+  text-align: center;
+}
+
+.upload-card__info {
+  max-width: 45ch;
+}
+
+.upload-card__status {
+  background: var(--g12);
+  border-radius: 4px;
+  color: var(--g1);
+  padding: 0.75em;
+}
+
+.upload-card__progress {
+  background: var(--g1);
+  border-radius: 20px;
+  margin-block-start: 0.875em;
+  padding: 6px;
+}
+
+.upload-card__details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upload-card__button {
+  background: var(--g12);
+  color: var(--g1);
+  cursor: pointer;
+  justify-self: start;
 }
