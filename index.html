@@ -11,9 +11,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/home/introduction.css" />
     <link rel="stylesheet" href="./assets/css/home/services.css" />
     <link rel="stylesheet" href="./assets/css/home/contact.css" />
+    <link rel="stylesheet" href="./assets/css/home/introduction.css" />
     <link rel="stylesheet" href="./assets/css/home/faq.css" />
     <link rel="stylesheet" href="./assets/css/home/footer.css" />
   </head>
@@ -22,7 +22,9 @@
       <nav class="container header__nav" aria-label="Navegação primária">
         <img src="./public/images/logo-preta-50.svg" class="header__logo" width="40" height="52" alt="" />
 
-        <ul class="nav-menu">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">☰</button>
+
+        <ul class="nav-menu" id="nav-menu">
           <li class="nav-menu__item">
             <a class="nav-menu__link" href="#services">Serviços</a>
           </li>
@@ -34,8 +36,11 @@
           <li class="nav-menu__item">
             <a class="nav-menu__link" href="#questions">Perguntas</a>
           </li>
+          <li class="nav-menu__item login-mobile">
+            <a class="nav-menu__link" href="./pages/signin.html">Login</a>
+          </li>
         </ul>
-        <a href="./pages/signin.html" class="button button--blue b4-bg b12-font">Login</a>
+        <a href="./pages/signin.html" class="button login-desktop button--blue b4-bg b12-font">Login</a>
       </nav>
     </header>
 
@@ -102,7 +107,7 @@
               <textarea class="form__textarea" name="message" rows="8" id="message"></textarea>
               <label for="message" class="form__label">Mensagem </label>
             </div>
-            <button class="button button--blue">Enviar</button>
+            <button class="button button--blue button--contact">Enviar</button>
           </form>
         </div>
       </section>
@@ -191,5 +196,6 @@
         </nav>
       </div>
     </footer>
+   <script src="assets/js/components/hamburger.js"></script>
   </body>
 </html>

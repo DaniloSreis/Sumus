@@ -27,3 +27,13 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+  .questions__items {
+    grid-template-columns: 1fr;
+    padding-inline:10px;
+  }
+  .questions__title {
+    font-size: 1.875rem;
+  }
+}
