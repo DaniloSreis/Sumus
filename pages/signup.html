@@ -1,58 +1,63 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastrar-se | Sumus</title>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/cjs/index.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/signup/signup.css" />
-  </head>
-  <body id="signup">
-    <main class="main container">
-      <div class="main__wrapper-logo">
-        <a href="../index.html" aria-label="Página inicial Sumus"
-          ><img src="../public/images/logo-branca-50.svg" width="50" height="66" alt=""
-        /></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar-se | Sumus</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/cjs/index.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/signup/signup.css" />
+</head>
+
+<body id="signup">
+  <main class="main container">
+    <div class="main__wrapper-logo">
+      <a href="../index.html" aria-label="Página inicial Sumus"><img src="../public/images/logo-branca-50.svg"
+          width="50" height="66" alt="" /></a>
+    </div>
+
+    <div class="main__wrapper-form">
+      <div class="signup-form__mobile-logo">
+        <a href="../index.html" aria-label="Página inicial Sumus">
+<img src="../public/images/logo-preta-50.svg" class="nav__logo" width="50" height="66" alt="">
+        </a>
       </div>
+      <h1 class="signup-form__title f-30">Cadastrar-se</h1>
 
-      <div class="main__wrapper-form">
-        <h1 class="signup-form__title f-30">Cadastrar-se</h1>
+      <form class="signup-form form" autocomplete="on">
+        <div class="signup-form__social">
+          <div class="signup-form__google-btn"></div>
+        </div>
 
-        <form class="signup-form form" autocomplete="on">
-          <div class="signup-form__social">
-            <div class="signup-form__google-btn"></div>
-          </div>
+        <div class="form__group">
+          <input type="email" name="email" autocomplete="email" required class="form__input" id="email" />
+          <label class="form__label" for="email">Email</label>
+        </div>
+        <div class="form__group">
+          <input type="text" class="form__input" id="name" />
+          <label class="form__label" for="name">Nome</label>
+        </div>
+        <div class="form__group">
+          <input type="password" class="form__input" id="password" />
+          <label class="form__label" for="password">Senha</label>
+        </div>
 
-          <div class="form__group">
-            <input type="email" name="email" autocomplete="email" required class="form__input" id="email" />
-            <label class="form__label" for="email">Email</label>
-          </div>
-          <div class="form__group">
-            <input type="text" class="form__input" id="name" />
-            <label class="form__label" for="name">Nome</label>
-          </div>
-          <div class="form__group">
-            <input type="password" class="form__input" id="password" />
-            <label class="form__label" for="password">Senha</label>
-          </div>
+        <button class="button button--black g12-bg g1-font">Cadastrar-se</button>
+        <div class="signup-form__auths">
+          <a href="./recuperar-senha.html" class="signup-form__auth-link b10-font"> Esqueceu a senha? </a>
+          <p class="signup-form__auth">
+            Já tem conta?
+            <a href="./login.html" class="signup-form__auth-link b10-font">Entrar</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="../assets/js/signup/signup.js"></script>
+</body>
 
-          <button class="button button--black g12-bg g1-font">Cadastrar-se</button>
-          <div class="signup-form__auths">
-            <a href="./recuperar-senha.html" class="signup-form__auth-link b10-font"> Esqueceu a senha? </a>
-            <p class="signup-form__auth">
-              Já tem conta?
-              <a href="./login.html" class="signup-form__auth-link b10-font">Entrar</a>
-            </p>
-          </div>
-        </form>
-      </div>
-    </main>
-    <script src="../assets/js/signup/signup.js"></script>
-  </body>
 </html>
