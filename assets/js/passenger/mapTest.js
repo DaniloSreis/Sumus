@@ -9,6 +9,8 @@ function debounce(fun, delay) {
 }
 
 export async function initMap() {
+
+
   // Namespace
     let mainMap = null
     let markerStart = null
@@ -131,6 +133,8 @@ export async function initMap() {
       lat: -23.6863278,
       lon: -46.617006,
     });
+
+    console.log(data)
 
     const { road, house_number, suburb } = data.address;
     userAddress = `${road}, ${house_number} - ${suburb}`;
