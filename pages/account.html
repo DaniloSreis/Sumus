@@ -1,12 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conta</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/user-account/sidebar.css" />
+    <link rel="stylesheet" href="../assets/css/user-account/tabs.css" />
   </head>
-  <body>
-    
+  <body id="account">
+    <aside class="sidebar">
+      <div class="sidebar__user-picture"></div>
+      <nav class="sidebar__nav">
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a href="./" class="sidebar__link">
+              <img src="../public/icons/home.svg" alt="" class="sidebar__icon" width="24" height="24" />
+              Home
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="./" class="sidebar__link">
+              <img src="../public/icons/wallet.svg" alt="" class="sidebar__icon" width="24" height="24" />
+              Carteira
+            </a>
+          </li>
+          <li class="sidebar__item active">
+            <a href="./" class="sidebar__link">
+              <img src="../public/icons/user-account.svg" alt="" class="sidebar__icon" width="24" height="24" />
+              Conta
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button type="button" class="sidebar__delete-account f-14">Deletar Conta</button>
+      <button type="button" class="sidebar__logout-account f-14">
+        <img src="../public/icons/logout.svg" alt="" width="24" height="24" />Sair
+      </button>
+    </aside>
+    <main class="main-account">
+      <section class="settings">
+        <h1 class="settings__title f-30">Conta</h1>
+        <ul class="settings__tablist container" role="tablist">
+          <li class="settings__tab f-18" role="tab" aria-selected="false" tabindex="0">Informações</li>
+          <li class="settings__tab f-18" role="tab" aria-selected="true" tabindex="0">Documentos</li>
+          <li class="settings__tab f-18" role="tab" aria-selected="false" tabindex="0">Contatos de Emergência</li>
+        </ul>
+        <div class="settings__panels">
+          <div class="settings__panel" role="tabpanel" aria-hidden="true">
+            <form class="form settings__form settings__informations">
+              <div class="form__group">
+                <input type="text" class="form__input" id="name" />
+                <label for="name" class="form__label">Nome</label>
+              </div>
+              <div class="form__group">
+                <input type="tel" class="form__input" id="phone" />
+                <label for="phone" class="form__label">Celular</label>
+              </div>
+              <div class="form__group">
+                <input type="email" class="form__input" id="email" />
+                <label for="email" class="form__label">Email</label>
+              </div>
+              <div class="form__group">
+                <div class="dropdown" id="dropdownAccount">
+                  <button
+                    type="button"
+                    class="dropdown__button button button--black"
+                    tabindex="0"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-controls="dropdown-list"
+                  >
+                    <span class="dropdown__button-text">Nenhum</span>
+                    <img
+                      src="../public/icons/arrow-down-black.svg"
+                      width="24"
+                      height="24"
+                      alt=""
+                      class="dropdown__icon"
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <div class="dropdown__list" aria-label="Rotas salvas" role="listbox">
+                    <div class="dropdown__option" role="option" aria-selected="true" tabindex="0">Nenhum</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">Idoso</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">Nanismo</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">Cadeirante</div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">
+                      Deficiente Visual
+                    </div>
+                    <div class="dropdown__option" role="option" aria-selected="false" tabindex="0">
+                      Deficiência Auditiva
+                    </div>
+                  </div>
+                </div>
+                <span class="form__label">Grupo Prioritário</span>
+              </div>
+              <div class="form__group">
+                <input type="password" class="form__input" id="newPassword" />
+                <label for="newPassword">Nova Senha</label>
+              </div>
+              <div class="form__group">
+                <input type="password" class="form__input" id="repeatPassword" />
+                <label for="repeatPassword">Repita a Senha</label>
+              </div>
+              <button type="button" class="form__button">Salvar</button>
+            </form>
+          </div>
+          <div class="settings__panel" role="tabpanel" aria-hidden="false">
+            <div class="upload-card">
+              <label class="upload-card__dropzone">
+                <img src="../public/icons/file.svg" width="24" height="24" alt="" class="upload-card__icon" />
+                <p class="upload-card__label f-14">
+                  Arraste e solte os arquivos ou clique para selecionar. Formatos Aceitos: .pdf, .jpg, .png
+                </p>
+                <input type="file" id="file-input" multiple accept="image/*" />
+              </label>
+              <p class="upload-card__info f-16">
+                Envie uma foto do seu RG ou Laudo Médico garantindo que estejam legíveis e atualizados.
+              </p>
+            </div>
+          </div>
+          <div class="settings__panel active" role="tabpanel" aria-hidden="true"></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="../assets/js/account/account.js"></script>
+    <script src="../assets/js/account/upload-file.js"></script>
+    <script src="../assets/js/account/tabs.js"></script>
   </body>
 </html>
