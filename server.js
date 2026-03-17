@@ -22,8 +22,20 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "assets")));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+})
+
 app.get("/request", (req, res) => {
   res.sendFile(path.join(__dirname, "pages", "request-ride.html"));
+})
+
+app.get("/account", (req, res) => {
+  res.sendFile(path.join(__dirname, "pages", "account.html"));
+})
+
+app.get("/signup", (req, res) => {
+  res.sendFile(path.join(__dirname, "pages", "signup.html"));
 })
 
 app.get("/env", (req, res) => {
