@@ -10,34 +10,46 @@
   </head>
   <body id="account">
     <aside class="sidebar">
-      <div class="sidebar__user-picture"></div>
-      <nav class="sidebar__nav">
-        <ul class="sidebar__list">
-          <li class="sidebar__item">
-            <a href="./" class="sidebar__link">
-              <img src="../public/icons/home.svg" alt="" class="sidebar__icon" width="24" height="24" />
-              Home
-            </a>
-          </li>
-          <li class="sidebar__item">
-            <a href="./" class="sidebar__link">
-              <img src="../public/icons/wallet.svg" alt="" class="sidebar__icon" width="24" height="24" />
-              Carteira
-            </a>
-          </li>
-          <li class="sidebar__item active">
-            <a href="./" class="sidebar__link">
-              <img src="../public/icons/user-account.svg" alt="" class="sidebar__icon" width="24" height="24" />
-              Conta
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <div class="sidebar__topbar">
+        <div class="sidebar__user-picture"></div>
+        <button
+          type="button"
+          class="sidebar__menu-toggle f-14"
+          aria-expanded="false"
+          aria-controls="account-sidebar-content"
+        >
+          Menu
+        </button>
+      </div>
+      <div class="sidebar__content" id="account-sidebar-content">
+        <nav class="sidebar__nav">
+          <ul class="sidebar__list">
+            <li class="sidebar__item">
+              <a href="./" class="sidebar__link">
+                <img src="../public/icons/home.svg" alt="" class="sidebar__icon" width="24" height="24" />
+                Home
+              </a>
+            </li>
+            <li class="sidebar__item">
+              <a href="./" class="sidebar__link">
+                <img src="../public/icons/wallet.svg" alt="" class="sidebar__icon" width="24" height="24" />
+                Carteira
+              </a>
+            </li>
+            <li class="sidebar__item active">
+              <a href="./" class="sidebar__link">
+                <img src="../public/icons/user-account.svg" alt="" class="sidebar__icon" width="24" height="24" />
+                Conta
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-      <button type="button" class="sidebar__delete-account f-14">Deletar Conta</button>
-      <button type="button" class="sidebar__logout-account f-14">
-        <img src="../public/icons/logout.svg" alt="" width="24" height="24" />Sair
-      </button>
+        <button type="button" class="sidebar__delete-account f-14">Deletar Conta</button>
+        <button type="button" class="sidebar__logout-account f-14">
+          <img src="../public/icons/logout.svg" alt="" width="24" height="24" />Sair
+        </button>
+      </div>
     </aside>
     <main class="main-account">
       <section class="settings">
