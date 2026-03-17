@@ -77,7 +77,7 @@ function displayImages(files) {
   img.src = '../public/icons/file-check.svg';
   img.alt = file.name;
   span.textContent = file.name;
-  sendButton.addEventListener('click', uploadFile(file));
+  sendButton.addEventListener('click', () => uploadFile(file, progressContainer));
   sendButton.textContent = 'Enviar';
 
   details.append(img, span);
@@ -99,21 +99,55 @@ fileInput.addEventListener('change', (e) => {
   displayImages(e.target.files);
 });
 
-function uploadFile(file) {
-  let xhr = new XMLHttpRequest();
+function uploadFile(file, progressContainer) {
+  const xhr = new XMLHttpRequest();
   const formData = new FormData();
+  const progressBar = progressContainer.querySelector('.upload-card__progress');
+  const sendButton = document.querySelector('.upload-card__button');
+
   formData.append('file', file);
+
+  if (progressContainer) {
+    progressContainer.hidden = false;
+  }
+
+  if (progressBar) {
+    progressBar.style.width = '0%';
+  }
+
+  if (sendButton) {
+    sendButton.disabled = true;
+  }
+
   xhr.upload.addEventListener('progress', (e) => {
-    console.log(e);
     if (e.lengthComputable) {
       const percentage = Math.round((e.loaded / e.total) * 100);
-      const progressBar = document.querySelector('.upload-card__progress');
       if (progressBar) {
         progressBar.style.width = percentage + '%';
       }
     }
-    console.log('oi');
   });
+
+  xhr.addEventListener('load', () => {
+    if (progressContainer) {
+      progressContainer.hidden = true;
+    }
+
+    if (sendButton) {
+      sendButton.disabled = false;
+    }
+
+    alert('Documento enviado');
+  });
+
+  xhr.addEventListener('error', () => {
+    if (sendButton) {
+      sendButton.disabled = false;
+    }
+
+    alert('Nao foi possivel enviar o documento.');
+  });
+
   xhr.open('POST', 'endpoit');
   xhr.send(formData);
 }
