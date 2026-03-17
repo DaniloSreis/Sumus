@@ -3,6 +3,7 @@
   grid-template-columns: 300px 1fr;
   gap: 100px;
   min-height: 100dvh;
+  align-items: stretch;
 }
 
 .sidebar {
@@ -11,11 +12,10 @@
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 20px;
-  height: 100dvh;
   max-width: 300px;
   padding: 1.25em;
+  height: 100%;
 }
-
 .sidebar__topbar {
   display: flex;
   align-items: center;
@@ -109,11 +109,9 @@
   }
 
   .sidebar {
-    height: auto;
     max-width: 240px;
+    height: 100%;
   }
-
-
 
   .sidebar__link {
     gap: 10px;
@@ -125,12 +123,14 @@
   #account {
     grid-template-columns: 1fr;
     gap: 0;
+    min-height: auto;
   }
 
   .sidebar {
     width: 100%;
     max-width: none;
     height: auto;
+    min-height: auto;
     grid-template-rows: auto auto;
     padding: 1em;
     gap: 12px;
@@ -150,6 +150,7 @@
   .sidebar__content {
     display: none;
     gap: 12px;
+    grid-template-rows: auto auto auto;
   }
 
   .sidebar--open .sidebar__content {
@@ -181,6 +182,5 @@
   .sidebar__logout-account {
     width: 100%;
     justify-content: center;
-
   }
 }
