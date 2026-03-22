@@ -1,4 +1,7 @@
+import { apiRequest } from '../apis-config/http-client.js';
+
 const dropZone = document.querySelector('.upload-card__dropzone');
+const UPLOAD_ENDPOINT = dropZone?.dataset.uploadEndpoint || '/api/upload';
 
 dropZone.addEventListener('drop', dropHandler);
 
@@ -77,7 +80,7 @@ function displayImages(files) {
   img.src = '../public/icons/file-check.svg';
   img.alt = file.name;
   span.textContent = file.name;
-  sendButton.addEventListener('click', uploadFile(file));
+  sendButton.addEventListener('click', () => uploadFile(file));
   sendButton.textContent = 'Enviar';
 
   details.append(img, span);
@@ -100,20 +103,38 @@ fileInput.addEventListener('change', (e) => {
 });
 
 function uploadFile(file) {
-  let xhr = new XMLHttpRequest();
   const formData = new FormData();
   formData.append('file', file);
-  xhr.upload.addEventListener('progress', (e) => {
-    console.log(e);
-    if (e.lengthComputable) {
-      const percentage = Math.round((e.loaded / e.total) * 100);
-      const progressBar = document.querySelector('.upload-card__progress');
+  const progressBar = document.querySelector('.upload-card__progress');
+  const sendButton = document.querySelector('.upload-card__button');
+
+  if (sendButton) {
+    sendButton.disabled = true;
+  }
+
+  if (progressBar) {
+    progressBar.style.width = '30%';
+  }
+
+  apiRequest(UPLOAD_ENDPOINT, {
+    method: 'POST',
+    data: formData,
+    isUpload: true,
+  })
+    .then(() => {
       if (progressBar) {
-        progressBar.style.width = percentage + '%';
+        progressBar.style.width = '100%';
       }
-    }
-    console.log('oi');
-  });
-  xhr.open('POST', 'endpoit');
-  xhr.send(formData);
+    })
+    .catch((error) => {
+      console.error('Erro ao enviar arquivo:', error.message);
+      if (progressBar) {
+        progressBar.style.width = '0%';
+      }
+    })
+    .finally(() => {
+      if (sendButton) {
+        sendButton.disabled = false;
+      }
+    });
 }
