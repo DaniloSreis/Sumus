@@ -1,0 +1,23 @@
+services:
+    frontend-sumus:
+        container_name: frontend-sumus
+
+        build: .
+
+        ports:
+            - '3000:3000'
+
+        networks:
+            - sumus
+
+        environment:
+            - NOMINATIM_API
+            - ORS_API
+            - ORS_KEY
+            - COUNTRY
+            - BACKEND_URL=http://backend-sumus:8080
+
+networks:
+    sumus:
+        name: sumus
+        driver: bridge
