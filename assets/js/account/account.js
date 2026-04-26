@@ -38,3 +38,5 @@ if (sidebar && menuToggle && sidebarContent) {
     syncSidebarState(isMobileMenuOpen);
   });
 }
+
+function enviarDocumento  () {alert("Documento enviado")}
